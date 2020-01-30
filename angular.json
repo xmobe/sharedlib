@@ -1,7 +1,47 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "sharedlib": {
+      "projectType": "library",
+      "root": "libs/sharedlib",
+      "sourceRoot": "libs/sharedlib/src",
+      "prefix": "sharedlib",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/sharedlib/tsconfig.lib.json",
+            "project": "libs/sharedlib/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/sharedlib/tsconfig.lib.json",
+              "libs/sharedlib/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/sharedlib/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/sharedlib/jest.config.js",
+            "tsConfig": "libs/sharedlib/tsconfig.spec.json",
+            "setupFile": "libs/sharedlib/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
-  }
+  },
+  "defaultProject": "sharedlib"
 }
