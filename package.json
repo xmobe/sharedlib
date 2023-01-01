@@ -32,12 +32,12 @@
     "@angular/core": "^8.2.14"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.14",
+    "@angular-devkit/build-angular": "~15.0.4",
     "@angular-devkit/build-ng-packagr": "~0.803.14",
     "@angular/cli": "8.3.14",
     "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "~8.2.11",
-    "@nrwl/angular": "^8.12.0",
+    "@nrwl/angular": "^15.4.2",
     "@nrwl/jest": "8.12.0",
     "@nrwl/workspace": "8.12.0",
     "@types/jest": "24.0.9",
